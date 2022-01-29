@@ -11,44 +11,6 @@ Ripplejs is pretty easy to use just follow the steps below.
 # Example
 
 ![example snapshot](./example1.png)
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>
-            Ripplejs - test
-        </title>
-        <script type="text/javascript" src="./ripple.js"></script>
-        <style>
-            /* elememt which the ripple effect is to be added to*/
-            div.elem {
-                height: 300px;
-                width: 300px;
-                background: #000000;
-                margin: 10vh auto;
-                position: relative;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="elem" id="parent"></div>
-        <script type="text/javascript">
-            document.querySelector("#parent").onclick = () => {
-                const ripple = new Ripple();
-                ripple.createRipple({
-                    "rippleParentId":"parent",
-                    "height" : 300,
-                    "width" : 300,
-                    "foreground" : "#ffffff22",
-                    "background" : "#ffffff11",
-                    "time" : 8,
-                    "type" : ""
-                });
-            }
-        </script>
-    </body>
-</html>
 
 # Code explanation
 
@@ -103,26 +65,6 @@ Ripplejs is pretty easy to use just follow the steps below.
 
 > Lets say we want to style the ripple effect from the example above we do this
 ![example snapshot](./example2.png)
-    <style>
-        /* elememt which the ripple effect is to be added to*/
-        div.elem {
-            height: 300px;
-            width: 300px;
-            background: #000000;
-            margin: 10vh auto;
-            position: relative;
-            /*adding border-radius*/
-            border-radius: 10px;
-        }
-        /* we style it using this technic */
-        .elem .ripple {
-            border-radius: 10px;
-        }
-        /* or alternatively, we can stlye bothe ath the same time */
-        div.elem , .elem .ripple {
-            border-radius: 10px;
-        }
-    </style>
 
 # Creator
 
