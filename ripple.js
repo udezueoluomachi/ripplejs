@@ -1,5 +1,5 @@
 //this is the first version
-
+//version 1.0.0
 class Ripple {
 
     //the ripple position is only accurate for elements whose display is set to relative
@@ -42,18 +42,18 @@ class Ripple {
         let x = event.offsetX , y = event.offsetY , maxRadius = Math.sqrt((rippleElem.height ** 2) + (rippleElem.width ** 2)) ,  initialRadius = (maxRadius * 2) / 100;
 
         const ctx = rippleElem.getContext("2d");
-        const drawCircle = () => {
+        const drawCircle2 = () => {
             ctx.strokeStyle = ripple.foreground;
             ctx.beginPath();
-            ctx.arc(x,y,initialRadius, 0 , Math.PI * 2);
+            ctx.arc(x,y,initialRadius / 2, 0 , Math.PI * 2);
             ctx.stroke();
             ctx.fillStyle = ripple.foreground;
             ctx.fill();
         }
-        const drawCircle2 = () => {
+        const drawCircle = () => {
             ctx.strokeStyle = ripple.background;
             ctx.beginPath();
-            ctx.arc(x,y,initialRadius / 2, 0 , Math.PI * 2);
+            ctx.arc(x,y,initialRadius, 0 , Math.PI * 2);
             ctx.stroke();
             ctx.fillStyle = ripple.background;
             ctx.fill();
@@ -64,12 +64,17 @@ class Ripple {
             ctx.fillStyle = "black";
             ctx.fill();
         }
+        //this functions allows user to specify the ripple type
+        //by default the 
+        const doubleCircles = () => {
+            drawCircle();
+            drawCircle2();
+        }
         let rippleAnimation = setInterval(
             () => {
                 clearRipple();
                 initialRadius += 10;
-                drawCircle();
-                drawCircle2();
+                ripple.type === "single" ? drawCircle() : doubleCircles();
                 initialRadius > maxRadius ? function() {
                     clearInterval(rippleAnimation);
                     //initialRadius = (maxRadius * 10) / 100;
