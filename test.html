@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>
+            Ripplejs - test
+        </title>
+        <script type="text/javascript" src="./ripple.js"></script>
+        <style>
+            div.elem {
+                height: 300px;
+                width: 300px;
+                background: #000000;
+                margin: 10vh auto;
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="elem" id="parent"></div>
+        <script type="text/javascript">
+
+            document.querySelector("#parent").onclick = () => {
+                const ripple = new Ripple();
+                ripple.createRipple({
+                    "rippleParentId":"parent",
+                    "height" : 300,
+                    "width" : 300,
+                    "foreground" : "#ffffff22",
+                    "background" : "#ffffff11",
+                    "time" : 8
+                });
+            }
+            
+        </script>
+    </body>
+</html>
