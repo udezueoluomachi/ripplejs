@@ -68,7 +68,7 @@ Ripplejs is pretty easy to use just follow the steps below.
 
 # Creator
 
-**Udezue Oluomachi Chimaobi
+**Udezue Oluomachi Chimaobi**
 # Contact info
 
 * [Github](https://www.github.com/udezueoluomachi)
