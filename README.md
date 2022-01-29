@@ -59,7 +59,8 @@ Ripplejs is pretty easy to use just follow the steps below.
 
 * The **rippleParentId** property takes a value of type => _string_ which specifies the id of the element to which the ripple effect is to be added.
 
-* The **height** and **width** properties takes a value of type => _number_ which specifies the height and width of the ripple effects in relation to that of the HTML element to which the ripple effect is to be added.
+* The **height** , **width** and the **time** properties takes a value of type => _number_. The width and height properties specifies the height and width of the ripple effects in relation to that of the HTML element to which the ripple effect is to be added. While the time property specifies the time in milliseconds for which ripple effect would be **animated**.
+  > Smaller times tend to provide better animations.
 
 * The **background** and **foreground** properties takes a values of type => _string_ which can be color values of any format e.g HEX , RGB , HSL , etc.
 
@@ -134,6 +135,8 @@ Ripplejs is pretty easy to use just follow the steps below.
 
 # Support project
 
+* Follow me on [Github](https://www.github.com/udezueoluomachi).
+
 * You can support this project by using it.
 
 * By reporting bugs and giving suggestions on new features to add and how to improve it by creating issues on github about this repository.
@@ -141,3 +144,7 @@ Ripplejs is pretty easy to use just follow the steps below.
 * By contributing to it because it is open sourc.e
 
 * You can also contact the creator via the links above if you want to provide funds.
+
+* Do not forget to give this project a star if you like it.
+
+**Thanks**
