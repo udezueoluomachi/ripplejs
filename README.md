@@ -1,10 +1,13 @@
 # About project
 > **Ripplejs** is an _open source_ javascript library created for the purpose of adding _ripple effects_ to html elements based on mouse _events_.
 
+# Live implementation
+[View](https://udezueoluomachi.github.io/ripplejs/)
+
 # How To use
 Ripplejs is pretty easy to use just follow the steps below.
 
-1. Link ripplejs to your project via this _<script type="text/javascript" src="udezue-oluomachi-chimaobi-api.herokuapp.com/ripple.js"></script>_ in the head section of your **HTML** document. Or you can simply **download** the **Ripplejs** source code from this repository and host it yourself or use it locally and of course, you have to add it in the _head section_ of your **HTML** document.
+1. Link ripplejs to your project via this _**<script type="text/javascript" src="https://udezueoluomachi.github.io/ripplejs/ripple.js"></script>**_ in the head section of your **HTML** document. Or you can simply **download** the **Ripplejs** source code from this repository and host it yourself or use it locally and of course, you have to add it in the _head section_ of your **HTML** document.
 
 2. The ripple().createRipple object functions based on mouse events so you have to add a mouse **event listener** to the HTML element you want to add the ripple effect to.
 
