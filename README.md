@@ -48,7 +48,7 @@ Ripplejs is pretty easy to use just follow the steps below.
 # Ommiting property values
 
 * To omit the value of a property of type _string_ just leave the quote marks empty
-  e.g type : ""
+  e.g {type : ""}
 
 # Applying CSS
 
