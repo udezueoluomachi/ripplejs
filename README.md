@@ -38,6 +38,8 @@ Ripplejs is pretty easy to use just follow the steps below.
 
 # Errors and Debugging
 
+* If you encounter any compatibility issues, add [Babel](https://google.com/search?how+to+add+javascript+babel+to+my+html+document+via+a+CDN+link) to your code because **ripplejs** is written based on [ES6](https://google.com/search?what+is+javascript+ES6) syntax.
+
 * Do not omit any of the properties to be passed into the **createRipple()** method.
 
 * You can only omit the values of properties which are optional.
