@@ -61,7 +61,7 @@ class Ripple {
         const clearRipple = () => {
             ctx.rect(0, 0 ,rippleElem.width, rippleElem.height);
             ctx.closePath();
-            ctx.fillStyle = "black";
+            ctx.fillStyle = window.getComputedStyle(rippleParent , null).getPropertyValue("background-color");
             ctx.fill();
         }
         //this functions allows user to specify the ripple type

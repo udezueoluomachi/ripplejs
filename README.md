@@ -9,7 +9,7 @@ Ripplejs is pretty easy to use just follow the steps below.
 
 1. Link ripplejs to your project via this _**<script type="text/javascript" src="https://udezueoluomachi.github.io/ripplejs/ripple.js"></script>**_ in the head section of your **HTML** document. Or you can simply **download** the **Ripplejs** source code from this repository and host it yourself or use it locally and of course, you have to add it in the _head section_ of your **HTML** document.
 
-2. The ripple().createRipple object functions based on mouse events so you have to add a mouse **event listener** to the HTML element you want to add the ripple effect to.
+2. The ripple().createRipple() object functions based on mouse events so you have to add a mouse **event listener** to the HTML element you want to add the ripple effect to.
 
 # Example
 
@@ -44,6 +44,8 @@ Ripplejs is pretty easy to use just follow the steps below.
 
 * You can only omit the values of properties which are optional.
 
+* Ripplejs might not add ripple effects to elements without **background-colors**.
+
 # Properties with optional values
 
 * The **type** property.
@@ -53,11 +55,11 @@ Ripplejs is pretty easy to use just follow the steps below.
 # Ommiting property values
 
 * To omit the value of a property of type _string_ just leave the quote marks empty
-  e.g {type : ""}
+  e.g { type : "" }
 
 # Applying CSS
 
-* The **ripple effect** is a member of your HTMl DOM tree for this fact, you can apply some css style to the **ripple effect element**.
+* The **ripple effect** is a member of your HTML DOM tree for this fact, you can apply some css style to the **ripple effect element**.
 
 * This feature was added to prevent the ripple from coming out of the edges of the elements to which the ripple effect is added.
   > A case is when you add **border radius** to the the element to which the ripple effect is added.
@@ -88,7 +90,7 @@ Ripplejs is pretty easy to use just follow the steps below.
 
 * By reporting bugs and giving suggestions on new features to add and how to improve it by creating issues on github about this repository.
 
-* By contributing to it because it is open sourc.e
+* By contributing to it because it is open source
 
 * You can also contact the creator via the links above if you want to provide funds.
 
