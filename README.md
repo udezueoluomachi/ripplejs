@@ -7,7 +7,11 @@
 # How To use
 Ripplejs is pretty easy to use just follow the steps below.
 
-1. Link ripplejs to your project via this ```html <script type="text/javascript" src="https://udezueoluomachi.github.io/ripplejs/ripple.js" crossorigin="anonymous"></script>```` in the head section of your **HTML** document. Or you can simply **download** the **Ripplejs** source code from this repository and host it yourself or use it locally and of course, you have to add it in the _head section_ of your **HTML** document.
+1. Link ripplejs to your project via this
+   ```html
+    <script type="text/javascript" src="https://udezueoluomachi.github.io/ripplejs/ripple.js" crossorigin="anonymous"></script>
+   ```
+   in the head section of your **HTML** document. Or you can simply **download** the **Ripplejs** source code from this repository and host it yourself or use it locally and of course, you have to add it in the _head section_ of your **HTML** document.
 
 2. The ripple().createRipple() object functions based on mouse events so you have to add a mouse **event listener** to the HTML element you want to add the ripple effect to.
 
