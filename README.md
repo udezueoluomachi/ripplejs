@@ -7,13 +7,54 @@
 # How To use
 Ripplejs is pretty easy to use just follow the steps below.
 
-1. Link ripplejs to your project via this _**<script type="text/javascript" src="https://udezueoluomachi.github.io/ripplejs/ripple.js" crossorigin="anonymous"></script>**_ in the head section of your **HTML** document. Or you can simply **download** the **Ripplejs** source code from this repository and host it yourself or use it locally and of course, you have to add it in the _head section_ of your **HTML** document.
+1. Link ripplejs to your project via this ```html <script type="text/javascript" src="https://udezueoluomachi.github.io/ripplejs/ripple.js" crossorigin="anonymous"></script>```` in the head section of your **HTML** document. Or you can simply **download** the **Ripplejs** source code from this repository and host it yourself or use it locally and of course, you have to add it in the _head section_ of your **HTML** document.
 
 2. The ripple().createRipple() object functions based on mouse events so you have to add a mouse **event listener** to the HTML element you want to add the ripple effect to.
 
 # Example
+```html
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+      <head>
+          <meta charset="utf-8"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          <title>
+              Ripplejs - test
+          </title>
+          <script type="text/javascript" src="https://udezueoluomachi.github.io/ripplejs/ripple.js" crossorigin="anonymous"></script>
+          <style>
+              /* element to which the ripple effect is to be added*/
+              div.elem {
+                  height: 300px;
+                  width: 300px;
+                  background: #000000;
+                  margin: 10vh auto;
+                  position: relative;
+              }
+          </style>
+      </head>
+      <body>
+          <div class="elem" id="parent"></div>
+          <script type="text/javascript">
 
-![example snapshot](./example1.png)
+              document.querySelector("#parent").onclick = () => {
+                  const ripple = new Ripple();
+                  ripple.createRipple({
+                      "rippleParentId":"parent",
+                      "height" : 300,
+                      "width" : 300,
+                      "foreground" : "#ffffff11",
+                      "background" : "#ffffff22",
+                      "time" : 8,
+                      "type" : "single",
+                      "increaseBy" : 10
+                  });
+              }
+
+          </script>
+      </body>
+  </html>
+```
 
 # Code explanation
 
@@ -24,7 +65,7 @@ Ripplejs is pretty easy to use just follow the steps below.
 
 * The **rippleParentId** property takes a value of type => _string_ which specifies the id of the element to which the ripple effect is to be added.
 
-* The **height** , **width** , **increaseBy** and the **time** properties takes a value of type => _number_. The width and height properties specifies the height and width of the ripple effects in relation to that of the HTML element to which the ripple effect is to be added. The **increaseBy** property specifies the incrementation value for the radius of the ripple effect. While the **time** property specifies the time in milliseconds for which ripple effect would be **animated**.
+* The **height** , **width** , **increaseBy** and the **time** properties takes a value of type => _number_. The width and height properties specifies the height and width of the ripple effects in relation to that of the HTML element to which the ripple effect is to be added from the **top-left** corner. The **increaseBy** property specifies the incrementation value for the radius of the ripple effect. While the **time** property specifies the time in milliseconds for which ripple effect would be **animated**.
   > Smaller times tend to provide better animations.
   
   > Also, smaller incremental values creates a smooth effect.
@@ -73,7 +114,29 @@ Ripplejs is pretty easy to use just follow the steps below.
 ## Example
 
 > Lets say we want to style the ripple effect from the example above we do this
-![example snapshot](./example2.png)
+```html
+  <style>
+    /* element which the ripple effect is to be added*/
+    div.elem {
+      height: 300px;
+      width: 300px;
+      background: #000000;
+      margin: 10vh auto;
+      position: relative;
+      /*adding border-radius*/
+      border-radius: 10px;
+    }
+    /* we can style the ripple effect element using this technic*/
+    .elem .ripple {
+      border-radius: 10px;
+    }
+    
+    /* or alternatively, we can style both at the same time*/
+    div.elem , .elem .ripple {
+      border-radius: 10px;
+    }
+  </style>
+```
 
 # Creator
 

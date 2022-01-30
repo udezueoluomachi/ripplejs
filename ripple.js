@@ -31,6 +31,7 @@ class Ripple {
         rippleElem.style.position = "absolute";
         rippleElem.style.top = "0";
         rippleElem.style.left = "0";
+        rippleElem.style.opacity = 0.2;
         //to assist custom styling of the ripple a class is provided
         //so users can style generally or relatively
         //e.g parent .ripple {/*css code*/}

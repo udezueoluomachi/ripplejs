@@ -6,33 +6,65 @@
         <title>
             Ripplejs - test
         </title>
-        <script type="text/javascript" src="https://udezueoluomachi.github.io/ripplejs/ripple.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./ripple.js" crossorigin="anonymous"></script>
         <style>
+            * {
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                box-sizing: border-box;
+                text-align: center;
+            }
             /* element to which the ripple effect is to be added*/
-            div.elem {
-                height: 300px;
-                width: 300px;
-                background: #000000;
+            #parent {
+                background: rgb(40, 170, 7);
+                color: rgb(255, 255, 255);
+            }
+            #parent1 {
+                color: #1d1c1c;
+            }
+            .elem {
+                height: 50px;
+                width: 150px;
+                display: block;
+                font-size: x-large;
                 margin: 10vh auto;
                 position: relative;
+                border: none;
+            }
+            .elem , .elem .ripple {
+                border-radius: 10px;
             }
         </style>
     </head>
     <body>
-        <div class="elem" id="parent"></div>
+        <h1>Ripplejs demo</h1>
+        <button class="elem" id="parent">click me</button>
+        <button class="elem" id="parent1">click me</button>
         <script type="text/javascript">
 
             document.querySelector("#parent").onclick = () => {
                 const ripple = new Ripple();
                 ripple.createRipple({
                     "rippleParentId":"parent",
-                    "height" : 300,
-                    "width" : 300,
+                    "height" : 50,
+                    "width" : 150,
                     "foreground" : "#ffffff11",
-                    "background" : "#ffffff22",
-                    "time" : 8,
-                    "type" : "single",
-                    "increaseBy" : 10
+                    "background" : "#00000033",
+                    "time" : 7,
+                    "type" : "",
+                    "increaseBy" : 2
+                });
+            }
+            document.querySelector("#parent1").onclick = () => {
+                const ripple = new Ripple();
+                ripple.createRipple({
+                    "rippleParentId":"parent1",
+                    "height" : 50,
+                    "width" : 150,
+                    "foreground" : "#ffffff22",
+                    "background" : "#00000066",
+                    "time" : 10,
+                    "type" : "",
+                    "increaseBy" : 4
                 });
             }
 
