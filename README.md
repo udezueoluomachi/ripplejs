@@ -7,7 +7,7 @@
 # How To use
 Ripplejs is pretty easy to use just follow the steps below.
 
-1. Link ripplejs to your project via this _**<script type="text/javascript" src="https://udezueoluomachi.github.io/ripplejs/ripple.js"></script>**_ in the head section of your **HTML** document. Or you can simply **download** the **Ripplejs** source code from this repository and host it yourself or use it locally and of course, you have to add it in the _head section_ of your **HTML** document.
+1. Link ripplejs to your project via this _**<script type="text/javascript" src="https://udezueoluomachi.github.io/ripplejs/ripple.js" crossorigin="anonymous"></script>**_ in the head section of your **HTML** document. Or you can simply **download** the **Ripplejs** source code from this repository and host it yourself or use it locally and of course, you have to add it in the _head section_ of your **HTML** document.
 
 2. The ripple().createRipple() object functions based on mouse events so you have to add a mouse **event listener** to the HTML element you want to add the ripple effect to.
 
@@ -24,8 +24,10 @@ Ripplejs is pretty easy to use just follow the steps below.
 
 * The **rippleParentId** property takes a value of type => _string_ which specifies the id of the element to which the ripple effect is to be added.
 
-* The **height** , **width** and the **time** properties takes a value of type => _number_. The width and height properties specifies the height and width of the ripple effects in relation to that of the HTML element to which the ripple effect is to be added. While the time property specifies the time in milliseconds for which ripple effect would be **animated**.
+* The **height** , **width** , **increaseBy** and the **time** properties takes a value of type => _number_. The width and height properties specifies the height and width of the ripple effects in relation to that of the HTML element to which the ripple effect is to be added. The **increaseBy** property specifies the incrementation value for the radius of the ripple effect. While the **time** property specifies the time in milliseconds for which ripple effect would be **animated**.
   > Smaller times tend to provide better animations.
+  
+  > Also, smaller incremental values creates a smooth effect.
 
 * The **background** and **foreground** properties takes a values of type => _string_ which can be color values of any format e.g HEX , RGB , HSL , etc.
 

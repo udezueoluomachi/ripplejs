@@ -73,7 +73,7 @@ class Ripple {
         let rippleAnimation = setInterval(
             () => {
                 clearRipple();
-                initialRadius += 10;
+                initialRadius += ripple.increaseBy;
                 ripple.type === "single" ? drawCircle() : doubleCircles();
                 initialRadius > maxRadius ? function() {
                     clearInterval(rippleAnimation);
