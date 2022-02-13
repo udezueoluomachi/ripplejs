@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>
-            Ripplejs - test
+            Ripplejs - Test
         </title>
         <script type="text/javascript" src="./ripple.js" crossorigin="anonymous"></script>
         <style>
@@ -19,6 +19,10 @@
                 color: rgb(255, 255, 255);
             }
             #parent1 {
+                --flexiripple-foreground: #ffffff22;
+                --flexiripple-background: #00000066;
+                --flexiripple-time: 10;
+                --flexiripple-increaseBy: 4;
                 color: #1d1c1c;
             }
             .elem {
@@ -37,18 +41,16 @@
     </head>
     <body>
         <h1>Ripplejs demo</h1>
-        <button class="elem" id="parent">click me</button>
-        <button class="elem" id="parent1">click me</button>
+        <button class="elem" id="parent">Click me</button>
+        <button class="elem" id="parent1">Click me</button>
         <script type="text/javascript">
 
             document.querySelector("#parent").onclick = () => {
                 const ripple = new Ripple();
                 ripple.createRipple({
                     "rippleParentId":"parent",
-                    "height" : 50,
-                    "width" : 150,
                     "foreground" : "#ffffff11",
-                    "background" : "#00000033",
+                    "background" : "#00000077",
                     "time" : 7,
                     "type" : "",
                     "increaseBy" : 2
@@ -58,13 +60,11 @@
                 const ripple = new Ripple();
                 ripple.createRipple({
                     "rippleParentId":"parent1",
-                    "height" : 50,
-                    "width" : 150,
-                    "foreground" : "#ffffff22",
-                    "background" : "#00000066",
-                    "time" : 10,
+                    "foreground" : "css",
+                    "background" : "css",
+                    "time" : "css",
                     "type" : "",
-                    "increaseBy" : 4
+                    "increaseBy" : "css"
                 });
             }
 

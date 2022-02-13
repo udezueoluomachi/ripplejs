@@ -13,7 +13,7 @@ Ripplejs is pretty easy to use just follow the steps below.
    ```
    or this
    ```html
-    <script type="text/javascript" src="https://unpkg.com/flexiripplejs@1.0.0/ripple.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://unpkg.com/flexiripplejs@1.0.1/ripple.js" crossorigin="anonymous"></script>
    ```
    in the head section of your **HTML** document. Or you can simply **download** the **Ripplejs** source code from this repository or install via npm using this command
    ```javascript
@@ -31,35 +31,67 @@ Ripplejs is pretty easy to use just follow the steps below.
           <meta charset="utf-8"/>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <title>
-              Ripplejs - test
+              Ripplejs - Test
           </title>
-          <script type="text/javascript" src="https://udezueoluomachi.github.io/ripplejs/ripple.js" crossorigin="anonymous"></script>
+          <script type="text/javascript" src="./ripple.js" crossorigin="anonymous"></script>
           <style>
+              * {
+                  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                  box-sizing: border-box;
+                  text-align: center;
+              }
               /* element to which the ripple effect is to be added*/
-              div.elem {
-                  height: 300px;
-                  width: 300px;
-                  background: #000000;
+              #parent {
+                  background: rgb(40, 170, 7);
+                  color: rgb(255, 255, 255);
+              }
+              #parent1 {
+                  --flexiripple-foreground: #ffffff22;
+                  --flexiripple-background: #00000066;
+                  --flexiripple-time: 10;
+                  --flexiripple-increase-by: 4;
+                  color: #1d1c1c;
+              }
+              .elem {
+                  height: 50px;
+                  width: 150px;
+                  display: block;
+                  font-size: x-large;
                   margin: 10vh auto;
                   position: relative;
+                  border: none;
+              }
+              .elem , .elem .ripple {
+                  border-radius: 10px;
               }
           </style>
       </head>
       <body>
-          <div class="elem" id="parent"></div>
+          <h1>Ripplejs demo</h1>
+          <button class="elem" id="parent">Click me</button>
+          <button class="elem" id="parent1">Click me</button>
           <script type="text/javascript">
 
               document.querySelector("#parent").onclick = () => {
                   const ripple = new Ripple();
                   ripple.createRipple({
                       "rippleParentId":"parent",
-                      "height" : 300,
-                      "width" : 300,
                       "foreground" : "#ffffff11",
-                      "background" : "#ffffff22",
-                      "time" : 8,
-                      "type" : "single",
-                      "increaseBy" : 10
+                      "background" : "#00000077",
+                      "time" : 7,
+                      "type" : "",
+                      "increaseBy" : 2
+                  });
+              }
+              document.querySelector("#parent1").onclick = () => {
+                  const ripple = new Ripple(); 
+                  ripple.createRipple({
+                      "rippleParentId":"parent1",
+                      "foreground" : "css",
+                      "background" : "css",
+                      "time" : "css",
+                      "type" : "",
+                      "increaseBy" : "css"
                   });
               }
 
@@ -71,16 +103,18 @@ Ripplejs is pretty easy to use just follow the steps below.
 # Code explanation
 
 * const ripple = new Ripple(); //This creates a **new** ripple object
-* ripple.createRipple() //The **createRipple** method houses the properties of the ripple effect and no property value must be ommited except for the **type property**
+* ripple.createRipple() //The **createRipple** method houses the properties of the ripple effect and no property value must be ommited except for the ones specified below.
 
 # Properties
 
 * The **rippleParentId** property takes a value of type => _string_ which specifies the id of the element to which the ripple effect is to be added.
 
-* The **height** , **width** , **increaseBy** and the **time** properties takes a value of type => _number_. The width and height properties specifies the height and width of the ripple effects in relation to that of the HTML element to which the ripple effect is to be added from the **top-left** corner. The **increaseBy** property specifies the incrementation value for the radius of the ripple effect. While the **time** property specifies the time in milliseconds for which ripple effect would be **animated**.
+* The **height** , **width** , **increaseBy** and the **time** properties takes a value of type => _number_. The width and height properties specifies the height and width of the ripple effects in relation to that of the HTML element to which the ripple effect is to be added from the **top-left** corner. The **increaseBy** property specifies the incrementation value for the radius of the ripple effect. While the **time** property specifies the time in milliseconds for which ripple effect element's radius would be incremented in other for it to be **animated**.
   > Smaller times tend to provide better animations.
   
   > Also, smaller incremental values creates a smooth effect.
+
+  > In current versions, the height and width properties are deprecated. You no longer have to specify the height and width of the element.
 
 * The **background** and **foreground** properties takes a values of type => _string_ which can be color values of any format e.g HEX , RGB , HSL , etc.
 
@@ -91,9 +125,57 @@ Ripplejs is pretty easy to use just follow the steps below.
 
   > To create a ripple effect that is made up of a **single** wave, the value of the **type** property has to be set to _"single"_ otherwise, a **double** ripple effect would be created.
 
+# Note
+
+  You can specify the property values of the ripple object in your **CSS** code using the **--flexiripple-property-name** built in properties of flexiripplejs.
+
+  To use **CSS** defined property values, you have to tell flexiripplejs that you want the values to be from those defined in your css code by setting the property values of the the property of your choice to "**CSS**".
+
+# Example
+
+```html
+  <!--Version 1.0.1-->
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>
+            Ripplejs - Test
+        </title>
+        <script type="text/javascript" src="./ripple.js" crossorigin="anonymous"></script>
+        <style>
+          #parent1 {
+              --flexiripple-foreground: #ffffff22;
+              --flexiripple-background: #00000066;
+              --flexiripple-time: 10;
+              --flexiripple-increaseBy: 4;
+              color: #1d1c1c;
+          }
+      </style>
+    </head>
+    <body>
+      <button class="elem" id="parent1">Click me</button>
+      <script type="text/javascript">
+        document.querySelector("#parent1").onclick = () => {
+            const ripple = new Ripple();
+            ripple.createRipple({
+                "rippleParentId":"parent1",
+                "foreground" : "css",
+                "background" : "css",
+                "time" : "css",
+                "type" : "",
+                "increaseBy" : "css"
+            });
+        }
+      </script>
+    </body>
+  </html>
+```
+
 # Errors and Debugging
 
-* If you encounter any compatibility issues, add [Babel](https://google.com/search?how+to+add+javascript+babel+to+my+html+document+via+a+CDN+link) to your code because **ripplejs** is written based on [ES6](https://google.com/search?what+is+javascript+ES6) syntax.
+* If you encounter any compatibility issues, add [Babel](https://google.com/search?q=how+to+add+javascript+babel+to+my+html+document+via+a+CDN+link) to your code because **ripplejs** is written based on [ES6](https://google.com/search?q=what+is+javascript+ES6) syntax.
 
 * Do not omit any of the properties to be passed into the **createRipple()** method.
 
@@ -149,6 +231,12 @@ Ripplejs is pretty easy to use just follow the steps below.
     }
   </style>
 ```
+
+# Extra informations
+  
+* The current version is 1.0.1
+
+* In version 1.0.1, the ripple effect element has a default opacity of **0.2**
 
 # Creator
 

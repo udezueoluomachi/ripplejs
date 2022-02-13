@@ -1,6 +1,6 @@
 {
   "name": "flexiripplejs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A flexible javascript library for adding ripple effects to HTML elements based on mouse events",
   "main": "ripple.js",
   "scripts": {
@@ -12,7 +12,8 @@
   },
   "keywords": [
     "ripplejs",
-    "flexiripplejs"
+    "flexiripplejs",
+    "ui library"
   ],
   "author": "Udezue Oluomachi Chimaobi",
   "license": "MIT",
@@ -20,7 +21,5 @@
     "url": "https://github.com/udezueoluomachi/ripplejs/issues"
   },
   "homepage": "https://github.com/udezueoluomachi/ripplejs#readme",
-  "dependencies": {
-    "flexiripplejs": "^1.0.0"
-  }
+  "devDependencies": {}
 }
